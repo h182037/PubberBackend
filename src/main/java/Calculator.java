@@ -1,10 +1,16 @@
-
 public class Calculator {
-
     private int num_beers;
 
-    private int calculate(){
-        num_beers = 2;
+    public Calculator(){
+        this.num_beers = 10;
+    }
+
+    public int calculate(int num){
+        num_beers = num;
+        return num_beers;
+    }
+
+    public int getNum_beers(){
         return num_beers;
     }
 }
