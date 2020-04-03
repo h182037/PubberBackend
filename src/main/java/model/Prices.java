@@ -1,3 +1,5 @@
+package model;
+
 public class Prices {
     private int Beer;
     private int Cider;

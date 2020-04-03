@@ -1,3 +1,5 @@
+package model;
+
 public class Day {
     private int CC;
     private Prices Night;

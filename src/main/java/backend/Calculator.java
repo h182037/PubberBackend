@@ -1,3 +1,5 @@
+package backend;
+
 public class Calculator {
     private int num_beers;
 

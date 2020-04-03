@@ -1,3 +1,5 @@
+package model;
+
 public class Bar {
     private String Name;
     private String Address;
