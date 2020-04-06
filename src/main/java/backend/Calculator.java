@@ -12,6 +12,7 @@ public class Calculator {
 
     public Calculator(){
         this.num_beers = 10;
+        this.barlist = new ArrayList<>();
         addDummies();
     }
 
