@@ -15,9 +15,14 @@ public class Calculator {
         addDummies();
     }
 
-    public int calculate(int num, int budget){
-        num_beers = num;
-        return num_beers;
+    public ArrayList<Bar> calculate(int num, int budget){
+        ArrayList<Bar> returnlist = new ArrayList<Bar>();
+        for(Bar b : barlist){
+            if(b.getDays().get(0).getMorning().getBeer() < (budget/num)){
+                returnlist.add(b);
+            }
+        }
+        return returnlist;
     }
 
     public int getNum_beers(){
