@@ -1,19 +1,22 @@
 package model;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class Bar {
     private String Name;
     private String Address;
     private String Description;
     private boolean Club;
     private String IMG;
-    private Day[] Days;
+    private ArrayList<Day> Days;
     private int Age;
 
     public Bar() {
-        Days = new Day[6];
+        Days = new ArrayList<Day>();
     }
 
-    public Bar(String name, String address, String description, boolean club, String IMG, Day[] days, int age) {
+    public Bar(String name, String address, String description, boolean club, String IMG, ArrayList<Day> days, int age) {
         Name = name;
         Address = address;
         Description = description;
@@ -63,11 +66,11 @@ public class Bar {
         this.IMG = IMG;
     }
 
-    public Day[] getDays() {
+    public ArrayList<Day> getDays() {
         return Days;
     }
 
-    public void setDays(Day[] days) {
+    public void setDays(ArrayList<Day> days) {
         Days = days;
     }
 

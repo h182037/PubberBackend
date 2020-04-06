@@ -7,8 +7,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class CalculatorController {
     private final Calculator cal = new Calculator();
 
-    @GetMapping("/getBeers")
-    public int getBeers(){
-        return cal.getNum_beers();
+    @GetMapping("/calculate")
+    public int calculate(){
+        if(cal.getBarlist().isEmpty())
+            cal.addDummies();
+
+        return cal.calculate(4, 300);
     }
 }
