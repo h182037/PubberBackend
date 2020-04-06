@@ -27,7 +27,7 @@ public class CalculatorController {
         if(cal.getBarlist().isEmpty())
             cal.addDummies();
         HttpHeaders responseHeaders = new HttpHeaders();
-        responseHeaders.set("Acces-Control-Allow-Origin", "*");
+        responseHeaders.set("Access-Control-Allow-Origin", "*");
         ArrayList<Bar> bars = new ArrayList<Bar>();
         bars = cal.calculate(4, 300);
         return ResponseEntity.ok().headers(responseHeaders).body(bars.get(0));
