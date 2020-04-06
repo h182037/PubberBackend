@@ -9,20 +9,29 @@ public class Bar {
     private String Description;
     private boolean Club;
     private String IMG;
-    private ArrayList<Day> Days;
+
+    public Prices getPrices() {
+        return prices;
+    }
+
+    public void setPrices(Prices prices) {
+        this.prices = prices;
+    }
+
+    //private ArrayList<Day> Days;
+    private Prices prices;
     private int Age;
 
     public Bar() {
-        Days = new ArrayList<Day>();
     }
 
-    public Bar(String name, String address, String description, boolean club, String IMG, ArrayList<Day> days, int age) {
+    public Bar(String name, String address, String description, boolean club, String IMG, Prices p, int age) {
         Name = name;
         Address = address;
         Description = description;
         Club = club;
         this.IMG = IMG;
-        Days = days;
+        this.prices = p;
         Age = age;
     }
 
@@ -66,14 +75,14 @@ public class Bar {
         this.IMG = IMG;
     }
 
-    public ArrayList<Day> getDays() {
+   /* public ArrayList<Day> getDays() {
         return Days;
     }
 
     public void setDays(ArrayList<Day> days) {
         Days = days;
     }
-
+*/
     public int getAge() {
         return Age;
     }
