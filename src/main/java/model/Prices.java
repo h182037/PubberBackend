@@ -1,6 +1,8 @@
 package model;
 
 public class Prices {
+
+    private String description;
     private int Beer;
     private int Cider;
     private int Wine;
@@ -15,6 +17,14 @@ public class Prices {
         Cider = cider;
         Wine = wine;
         Shot = shot;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public int getBeer() {

@@ -1,7 +1,5 @@
 package model;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 
 public class Bar {
     private String Name;
@@ -9,6 +7,41 @@ public class Bar {
     private String Description;
     private boolean Club;
     private String IMG;
+    private Prices prices;
+    private int CC;
+    private Prices offers;
+    private int Age;
+
+    public Bar() {
+
+    }
+
+    public Bar(String name, String address, String description, boolean club, String IMG, Prices p, Prices off, int age) {
+        Name = name;
+        Address = address;
+        Description = description;
+        Club = club;
+        this.IMG = IMG;
+        this.prices = p;
+        Age = age;
+        this.offers = off;
+    }
+
+    public int getCC() {
+        return CC;
+    }
+
+    public void setCC(int CC) {
+        this.CC = CC;
+    }
+
+    public Prices getOffers() {
+        return offers;
+    }
+
+    public void setOffers(Prices offers) {
+        this.offers = offers;
+    }
 
     public Prices getPrices() {
         return prices;
@@ -18,22 +51,6 @@ public class Bar {
         this.prices = prices;
     }
 
-    //private ArrayList<Day> Days;
-    private Prices prices;
-    private int Age;
-
-    public Bar() {
-    }
-
-    public Bar(String name, String address, String description, boolean club, String IMG, Prices p, int age) {
-        Name = name;
-        Address = address;
-        Description = description;
-        Club = club;
-        this.IMG = IMG;
-        this.prices = p;
-        Age = age;
-    }
 
     public String getName() {
         return Name;
@@ -75,14 +92,6 @@ public class Bar {
         this.IMG = IMG;
     }
 
-   /* public ArrayList<Day> getDays() {
-        return Days;
-    }
-
-    public void setDays(ArrayList<Day> days) {
-        Days = days;
-    }
-*/
     public int getAge() {
         return Age;
     }
