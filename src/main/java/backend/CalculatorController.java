@@ -6,10 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.origin.Origin;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.ArrayList;
 
 @RestController
@@ -23,13 +21,13 @@ public class CalculatorController {
 
     @RequestMapping("/calculate")
     @ResponseBody
-    public ResponseEntity<Bar> calculate(){
+    public ResponseEntity<Bar> calculate(@RequestBody CallObject call){
         if(cal.getBarlist().isEmpty())
             cal.addDummies();
         HttpHeaders responseHeaders = new HttpHeaders();
         responseHeaders.set("Access-Control-Allow-Origin", "*");
         ArrayList<Bar> bars = new ArrayList<Bar>();
-        bars = cal.calculate(4, 300);
+        bars = cal.calculate(call.isGivenMoney(), call.getAmount(), call.getDrinkType(), call.isClub());
         return ResponseEntity.ok().headers(responseHeaders).body(bars.get(0));
     }
 

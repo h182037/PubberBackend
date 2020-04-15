@@ -13,14 +13,29 @@ public class Calculator {
         addDummies();
     }
 
-    public ArrayList<Bar> calculate(int num, int budget){
+    public ArrayList<Bar> calculate(boolean givenMoney, int amount, String drinktype, boolean club){
         ArrayList<Bar> returnlist = new ArrayList<>();
-        for(Bar b : barlist){
-            if(b.getPrices().getBeer() < (budget/num)){
-                returnlist.add(b);
+        if(givenMoney){
+            switch (drinktype){
+                case "beer":
+                    returnlist.add(getBarlist().get(0));
+                case "wine":
+                    returnlist.add(getBarlist().get(0));
+                case "cider":
+                    returnlist.add(getBarlist().get(0));
+                case "shot":
+                    returnlist.add(getBarlist().get(0));
             }
-            if(b.getOffers().getBeer() < (budget/num)){
-                returnlist.add(b);
+        }else {
+            switch (drinktype){
+                case "beer":
+                    returnlist.add(getBarlist().get(0));
+                case "wine":
+                    returnlist.add(getBarlist().get(0));
+                case "cider":
+                    returnlist.add(getBarlist().get(0));
+                case "shot":
+                    returnlist.add(getBarlist().get(0));
             }
         }
         return returnlist;
