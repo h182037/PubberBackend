@@ -5,6 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.origin.Origin;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
@@ -18,7 +19,7 @@ public class CalculatorController {
         SpringApplication.run(CalculatorController.class, args);
     }
 
-    @PostMapping("/calculate")
+    @PostMapping(value = "/calculate", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public ResponseEntity<Bar> calculate(@RequestBody CallObject call){
         if(cal.getBarlist().isEmpty())
