@@ -19,7 +19,8 @@ public class CalculatorController {
         SpringApplication.run(CalculatorController.class, args);
     }
 
-    @RequestMapping(value = "/calculate",method =   RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/calculate", method =   RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
     public ResponseEntity<Bar> calculate(@RequestBody CallObject call){
         if(cal.getBarlist().isEmpty())
             cal.addDummies();
