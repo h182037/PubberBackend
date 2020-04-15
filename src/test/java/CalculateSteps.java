@@ -20,7 +20,7 @@ public class CalculateSteps {
 
     @When("i calculate my bar")
     public void i_calculate_my_bar_now() {
-        bar = calculator.calculate(num, budget).get(0).getName();
+        bar = calculator.calculate(true, 2, "beer", false).get(0).getName();
     }
 
     @Then("answer should be {string}")

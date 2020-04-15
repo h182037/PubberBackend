@@ -1,0 +1,7 @@
+RunCucumber.class
+controller\CalculatorControllerTest.class
+controller\AbstractTest.class
+controller\BarControllerTest.class
+CalculateSteps.class
+controller\Parametere.class
+jpa\TestBarDAO.class
