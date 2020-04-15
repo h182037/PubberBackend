@@ -19,7 +19,7 @@ public class CalculatorController {
         SpringApplication.run(CalculatorController.class, args);
     }
 
-    @RequestMapping("/calculate")
+    @PostMapping("/calculate")
     @ResponseBody
     public ResponseEntity<Bar> calculate(@RequestBody CallObject call){
         if(cal.getBarlist().isEmpty())
