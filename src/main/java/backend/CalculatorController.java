@@ -21,7 +21,7 @@ public class CalculatorController {
     @RequestMapping(value = "/calculate", method =   RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public ResponseEntity<Bar> calculate(@RequestBody CallObject call){
-        if(cal.getBarlist().isEmpty())
+        if(cal.getBarlist().size() < 2)
             cal.addDummies();
         HttpHeaders responseHeaders = new HttpHeaders();
         responseHeaders.set("Access-Control-Allow-Origin", "*");
