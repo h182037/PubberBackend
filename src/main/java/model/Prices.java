@@ -12,7 +12,7 @@ public class Prices {
 
     }
 
-    public Prices(int beer, int cider, int wine, int shot) {
+    public Prices(int beer, int cider, int wine, int shot){
         Beer = beer;
         Cider = cider;
         Wine = wine;

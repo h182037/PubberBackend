@@ -15,30 +15,66 @@ public class Calculator {
 
     public ArrayList<Bar> calculate(boolean givenMoney, int amount, String drinktype, boolean club){
         ArrayList<Bar> returnlist = new ArrayList<>();
-        if(givenMoney){
-            switch (drinktype){
-                case "beer":
-                    returnlist.add(getBarlist().get(0));
-                case "wine":
-                    returnlist.add(getBarlist().get(0));
-                case "cider":
-                    returnlist.add(getBarlist().get(0));
-                case "shot":
-                    returnlist.add(getBarlist().get(0));
-            }
-        }else {
-            switch (drinktype){
-                case "beer":
-                    returnlist.add(getBarlist().get(0));
-                case "wine":
-                    returnlist.add(getBarlist().get(0));
-                case "cider":
-                    returnlist.add(getBarlist().get(0));
-                case "shot":
-                    returnlist.add(getBarlist().get(0));
-            }
+        returnlist = cheapest(amount, drinktype, club);
+        return returnlist;
+    }
+
+    public ArrayList<Bar> cheapest(int amount, String drinkType, boolean club){
+        ArrayList<Bar> bars = clubOrNot(club);
+        ArrayList<Bar> returnlist = new ArrayList<>();
+        switch (drinkType){
+            case "beer":
+                int i = 0;
+                Bar cheapestSoFar = bars.get(i);
+                for(i = 1; i < bars.size(); i++){
+                    int price = bars.get(i).getPrices().getBeer();
+                    if(price < cheapestSoFar.getPrices().getBeer()){
+                        cheapestSoFar = bars.get(i);
+                    }
+                }
+                returnlist.add(cheapestSoFar);
+            case "wine":
+                i = 0;
+                cheapestSoFar = bars.get(i);
+                for(i = 1; i < bars.size(); i++){
+                    int price = bars.get(i).getPrices().getWine();
+                    if(price < cheapestSoFar.getPrices().getWine()){
+                        cheapestSoFar = bars.get(i);
+                    }
+                }
+                returnlist.add(cheapestSoFar);
+            case "cider":
+                i = 0;
+                cheapestSoFar = bars.get(i);
+                for(i = 1; i < bars.size(); i++){
+                    int price = bars.get(i).getPrices().getCider();
+                    if(price < cheapestSoFar.getPrices().getCider()){
+                        cheapestSoFar = bars.get(i);
+                    }
+                }
+                returnlist.add(cheapestSoFar);
+            case "shot":
+                i = 0;
+                cheapestSoFar = bars.get(i);
+                for(i = 1; i < bars.size(); i++){
+                    int price = bars.get(i).getPrices().getShot();
+                    if(price < cheapestSoFar.getPrices().getShot()){
+                        cheapestSoFar = bars.get(i);
+                    }
+                }
+                returnlist.add(cheapestSoFar);
         }
         return returnlist;
+    }
+
+    public ArrayList<Bar> clubOrNot(boolean club){
+        ArrayList<Bar> bars = getBarlist();
+        for(int i = 0; i < bars.size(); i ++){
+            if(bars.get(i).isClub() != club){
+                bars.remove(i);
+            }
+        }
+        return bars;
     }
 
     public ArrayList<Bar> getBarlist(){
