@@ -9,8 +9,6 @@ public class Calculator {
     private ArrayList<Bar> barlist;
 
     public Calculator(){
-        this.barlist = new ArrayList<>();
-        addDummies();
     }
 
     public ArrayList<Bar> calculate(boolean givenMoney, int amount, String drinktype, boolean club){
@@ -88,6 +86,10 @@ public class Calculator {
 
     public ArrayList<Bar> getBarlist(){
         return this.barlist;
+    }
+
+    public void setBarlist(ArrayList<Bar> barlist) {
+        this.barlist = barlist;
     }
 
     public void addDummies(){
