@@ -83,12 +83,13 @@ public class Calculator {
 
     public void addDummies(){
         Prices dayprices = new Prices(45, 55, 59, 20);
-        Bar bar = new Bar("Kronbar", "Ved Høgskulen?", "kul og chill og sånn", false, "Bilete her", dayprices,(new Prices()), 18);
+        Prices BarOffer = new Prices(43, 72, 80, 30);
+        Bar bar = new Bar("Kronbar", "Ved Høgskulen?", "kul og chill og sånn", false, "Bilete her", dayprices,BarOffer, 18);
         this.barlist.add(bar);
 
         Prices dayprices2 = new Prices(87, 96, 112, 68);
-        Prices Bar2Offer = new Prices(43, 72, 80, 30);
-        Bar bar2 = new Bar("Ferdinands", "Teatergaten, i dunno", "Hipsterkveld", false, "Bilete her også", dayprices2, Bar2Offer, 22);
+        Prices Bar2Offer = new Prices(40, 70, 79, 19);
+        Bar bar2 = new Bar("Ferdinands", "Teatergaten, i dunno", "Hipsterkveld", true, "Bilete her også", dayprices2, Bar2Offer, 22);
         this.barlist.add(bar2);
     }
 }
