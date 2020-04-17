@@ -29,6 +29,10 @@ public class Calculator {
                     if(price < cheapestSoFar.getPrices().getBeer()){
                         cheapestSoFar = bars.get(i);
                     }
+                    int offer = bars.get(i).getOffers().getBeer();
+                    if(offer < cheapestSoFar.getOffers().getBeer()){
+                        cheapestSoFar = bars.get(i);
+                    }
                 }
                 returnlist.add(cheapestSoFar);
             case "wine":
@@ -37,6 +41,10 @@ public class Calculator {
                 for(i = 1; i < bars.size(); i++){
                     int price = bars.get(i).getPrices().getWine();
                     if(price < cheapestSoFar.getPrices().getWine()){
+                        cheapestSoFar = bars.get(i);
+                    }
+                    int offer = bars.get(i).getOffers().getWine();
+                    if(offer < cheapestSoFar.getOffers().getWine()){
                         cheapestSoFar = bars.get(i);
                     }
                 }
@@ -49,6 +57,10 @@ public class Calculator {
                     if(price < cheapestSoFar.getPrices().getCider()){
                         cheapestSoFar = bars.get(i);
                     }
+                    int offer = bars.get(i).getOffers().getCider();
+                    if(offer < cheapestSoFar.getOffers().getCider()){
+                        cheapestSoFar = bars.get(i);
+                    }
                 }
                 returnlist.add(cheapestSoFar);
             case "shot":
@@ -57,6 +69,10 @@ public class Calculator {
                 for(i = 1; i < bars.size(); i++){
                     int price = bars.get(i).getPrices().getShot();
                     if(price < cheapestSoFar.getPrices().getShot()){
+                        cheapestSoFar = bars.get(i);
+                    }
+                    int offer = bars.get(i).getOffers().getShot();
+                    if(offer < cheapestSoFar.getOffers().getShot()){
                         cheapestSoFar = bars.get(i);
                     }
                 }
