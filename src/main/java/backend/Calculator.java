@@ -69,12 +69,21 @@ public class Calculator {
 
     public ArrayList<Bar> clubOrNot(boolean club){
         ArrayList<Bar> bars = getBarlist();
-        for(int i = 0; i < bars.size(); i ++){
-            if(bars.get(i).isClub() != club){
-                bars.remove(i);
+        if(club){
+            for(int i = 0; i < bars.size(); i ++){
+                if(!bars.get(i).isClub()){
+                    bars.remove(i);
+                }
+            }
+        }else{
+            for(int i = 0; i < bars.size(); i ++){
+                if(bars.get(i).isClub()){
+                    bars.remove(i);
+                }
             }
         }
         return bars;
+
     }
 
     public ArrayList<Bar> getBarlist(){
