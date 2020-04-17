@@ -83,7 +83,7 @@ public class BarControllerTest extends AbstractTest {
 
     @Test
     public void createBar() throws Exception {
-        Prices dayprices = new Prices(45, 55, 59, 20);
+        Prices dayprices = new Prices(45, 55, 59, 20, "priser");
         Bar bar = new Bar("TestName", "TestAddress", "TestDescription", false, "/oskar/nudes/nakenbilde.png", dayprices, (new Prices()), 18);
         String uri = "/bar";
         String inputJson = super.mapToJson(bar);

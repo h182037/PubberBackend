@@ -33,7 +33,7 @@ public class TestBarDAO {
 //    @Transactional
     @Rollback(true)
     public void testAddBar() {
-        Prices dayprices = new Prices(45, 55, 59, 20);
+        Prices dayprices = new Prices(45, 55, 59, 20, "priser");
         Bar bar = new Bar("Kronbar", "Ved Høgskulen?", "kul og chill og sånn", false, "Bilete her", dayprices, (new Prices()), 18);
         barDAO.addBar(bar);
 
