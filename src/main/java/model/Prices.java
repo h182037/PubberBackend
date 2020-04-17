@@ -12,7 +12,8 @@ public class Prices {
 
     }
 
-    public Prices(int beer, int cider, int wine, int shot){
+    public Prices(int beer, int cider, int wine, int shot, String description){
+        this.description = description;
         Beer = beer;
         Cider = cider;
         Wine = wine;

@@ -14,7 +14,7 @@ public class Calculator {
     }
 
     public ArrayList<Bar> calculate(boolean givenMoney, int amount, String drinktype, boolean club){
-        ArrayList<Bar> returnlist = new ArrayList<>();
+        ArrayList<Bar> returnlist;
         returnlist = cheapest(amount, drinktype, club);
         return returnlist;
     }
@@ -82,13 +82,13 @@ public class Calculator {
     }
 
     public void addDummies(){
-        Prices dayprices = new Prices(45, 55, 59, 20);
-        Prices BarOffer = new Prices(43, 72, 80, 30);
+        Prices dayprices = new Prices(45, 55, 59, 20, "Hverdagspriser");
+        Prices BarOffer = new Prices(43, 72, 80, 30, "Lånekassen arrangement 2. Torsdag i måneden");
         Bar bar = new Bar("Kronbar", "Ved Høgskulen?", "kul og chill og sånn", false, "Bilete her", dayprices,BarOffer, 18);
         this.barlist.add(bar);
 
-        Prices dayprices2 = new Prices(87, 96, 112, 68);
-        Prices Bar2Offer = new Prices(40, 70, 79, 19);
+        Prices dayprices2 = new Prices(87, 96, 112, 68, "Vanlige priser");
+        Prices Bar2Offer = new Prices(40, 70, 79, 19, "Hvis du kjenner bartenderen.");
         Bar bar2 = new Bar("Ferdinands", "Teatergaten, i dunno", "Hipsterkveld", true, "Bilete her også", dayprices2, Bar2Offer, 22);
         this.barlist.add(bar2);
     }
